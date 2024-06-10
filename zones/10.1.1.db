@@ -1,0 +1,14 @@
+$TTL    604800
+@       IN      SOA    dns.gethinnet.local. admin.gethinnet.local. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+@     IN      NS      dns.gethinnet.local.
+
+3       IN      PTR     dns.gethinnet.local.    ; 10.1.1.3
+1       IN      PTR     gateway.gethinnet.local. ; 10.1.1.1
+2       IN      PTR     dhcp.gethinnet.local.    ; 10.1.1.2
+4	IN	PTR	appa.gethinnet.local.	; 10.1.1.4

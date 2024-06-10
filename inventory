@@ -1,0 +1,17 @@
+[easnet]
+gateway ansible_host=root@172.16.6.51
+
+[gethinnet]
+dhcp ansible_host=root@10.1.1.2
+dns ansible_host=root@10.1.1.3
+appa ansible_host=root@10.1.1.4
+
+[multi:children]
+easnet
+gethinnet
+
+[multi:vars]
+ansible_user=root
+
+[gethinnet:vars]
+ansible_ssh_common_args='-J root@172.16.6.51'

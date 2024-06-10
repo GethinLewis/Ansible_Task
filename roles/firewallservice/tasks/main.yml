@@ -1,0 +1,12 @@
+---
+- name: Allow an app through firewall
+  ansible.posix.firewalld:
+    service: "{{ firewall_reload_service }}"
+    zone: public
+    permanent: true
+    state: enabled
+
+- name: Reload the firewall
+  ansible.builtin.service:
+    name: firewalld
+    state: reloaded
